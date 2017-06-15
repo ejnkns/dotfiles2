@@ -1,0 +1,32 @@
+#! /bin/sh
+
+sxhkd &
+$HOME/.config/polybar/launch.sh &
+volnoti &
+xsetroot -cursor_name left_ptr
+
+#bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d 一 二 三 四 五 六 七 八 九 〇
+#bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+
+bspc config border_width		1	
+bspc config window_gap			20 
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc config click_to_focus true
+bspc config normal_border_color \#030303
+
+
+bspc rule -a feh state=floating border=off
+bspc rule -a mpv state=floating border=off
+bspc rule -a firefox state=tiled border=off
+bspc rule -a polybar layer=below
+bspc rule -a xterm border=off manage=off
+bspc rule -a zathura state=tiled border=off
+
+
+
+
